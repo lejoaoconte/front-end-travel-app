@@ -1,15 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" src="/styles/body.scss" />
     <link rel="stylesheet" src="/styles/main.scss" />
     <link rel="icon" type="image/x-icon" href="assets/favico.ico" />
-    <title>Document</title>
+    <title>The Travel App</title>
   </head>
+
   <body>
-    <h1>Hello, world!</h1>
+    <header
+      style="background-image: url('assets/background.png')"
+      id="header-area"
+    >
+      <h1>Your complete travel summary</h1>
+      <h3>Find every information here</h3>
+
+      <form class="form-area">
+        <label class="input-area" for="city">
+          <span>City</span>
+          <input type="text" name="city" id="city" required />
+        </label>
+        <label class="input-area" for="date">
+          <span>Date</span>
+          <input type="date" name="date" id="date" required />
+        </label>
+        <button id="button-send" type="submit"><div>&#9906;</div></button>
+      </form>
+    </header>
+    <main>
+      <h1 id="title-body">My Trips</h1>
+      <section>
+        <div class="general-trip-area">
+          <div
+            id="image-trip-area"
+            style="background-image: url('https://via.placeholder.com/450x450')"
+          ></div>
+          <div class="basic-infos-area">
+            <h3>My trip to: Leopoldina, Brazil</h3>
+            <div>
+              <p>Weather</p>
+              <p>Min: <span>120</span></p>
+              <p>Max: <span>120</span></p>
+              <p>Mostly cold</p>
+            </div>
+
+            <div id="buttons-area">
+              <button>+ City infos</button>
+              <button>+ Notes</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
   </body>
   <script>
     if ("serviceWorker" in navigator) {

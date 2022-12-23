@@ -17,6 +17,7 @@
     "webpack-cli": "^5.0.1"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
     "babel-loader": "^9.1.0",
     "clean-webpack-plugin": "^4.0.0",
     "cors": "^2.8.5",
