@@ -100,4 +100,4 @@ function getData(city, date) {
     });
 }
 
-export { getData, handleForm, setArrayValues };
+export { getData, handleForm };
