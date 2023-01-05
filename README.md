@@ -10,6 +10,8 @@ Basically the project have a server in NodeJS to get data and a client to run da
 
 Below we have mobile and desktop illustrations:
 
-<img src="https://github.com/lejoaoconte/front-end-travel-app/blob/main/images/image1.png?raw=true" width="550px" />
-<img src="https://github.com/lejoaoconte/front-end-travel-app/blob/main/images/image2.png?raw=true" width="130px" />
+<div>
+  <img src="https://github.com/lejoaoconte/front-end-travel-app/blob/main/images/image1.png?raw=true" width="550px" />
+  <img src="https://github.com/lejoaoconte/front-end-travel-app/blob/main/images/image2.png?raw=true" width="130px" />
+</div>
 
