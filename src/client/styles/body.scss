@@ -60,3 +60,26 @@ main {
     margin: 150px 20px;
   }
 }
+
+#loading-area {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+
+  width: 100vw;
+  height: 50px;
+  margin-top: 0;
+
+  z-index: 100;
+
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    margin: 0;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+}

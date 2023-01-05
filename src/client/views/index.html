@@ -17,6 +17,7 @@
   </head>
 
   <body>
+    <div id="loading-area"><p>Loading...</p></div>
     <header
       style="background-image: url('assets/background.png')"
       id="header-area"
@@ -24,7 +25,7 @@
       <h1>Your complete travel summary</h1>
       <h3>Find every information here</h3>
 
-      <form class="form-area">
+      <form class="form-area" onsubmit="return Client.handleForm(event)">
         <label class="input-area" for="city">
           <span>City</span>
           <input type="text" name="city" id="city" required />
@@ -38,28 +39,7 @@
     </header>
     <main>
       <h1 id="title-body">My Trips</h1>
-      <section>
-        <div class="general-trip-area">
-          <div
-            id="image-trip-area"
-            style="background-image: url('https://via.placeholder.com/450x450')"
-          ></div>
-          <div class="basic-infos-area">
-            <h3>My trip to: Leopoldina, Brazil</h3>
-            <div>
-              <p>Weather</p>
-              <p>Min: <span>120</span></p>
-              <p>Max: <span>120</span></p>
-              <p>Mostly cold</p>
-            </div>
-
-            <div id="buttons-area">
-              <button>+ City infos</button>
-              <button>+ Notes</button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section id="my-trips"></section>
     </main>
 
     <footer></footer>
@@ -77,5 +57,12 @@
           });
       });
     }
+
+    window.onload = function () {
+      if (localStorage.getItem("local-infos")) {
+        const data = JSON.parse(localStorage.getItem("local-infos"));
+        data.map(async (d) => await Client.getData(d.city, d.date));
+      }
+    };
   </script>
 </html>
