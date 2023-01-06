@@ -8,7 +8,7 @@
     "build-dev": "webpack-dev-server  --config webpack.dev.js --open",
     "build-prod": "webpack --config webpack.prod.js",
     "server": "node src/server/index.js",
-    "test": "jest --watch"
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^1.2.2",

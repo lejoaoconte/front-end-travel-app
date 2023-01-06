@@ -1,23 +1,27 @@
 const cors = require("cors");
 const express = require("express");
 const axios = require("axios");
-const dotenv = require("dotenv");
 
+// Config .env
+const dotenv = require("dotenv");
 dotenv.config();
 
 const port = process.env.PORT || 8055;
 
 const app = express();
 
+// Middlewares
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("dist"));
 
+// To get home router
 app.get("/", function (req, res) {
   res.sendFile("dist/index.html");
 });
 
+// Start server and function test server
 app.listen(port, function () {
   console.log(`Running in ${port}`);
 });
@@ -26,6 +30,7 @@ app.get("/test", function (req, res) {
   res.send({ message: "running" });
 });
 
+// Function to get infos from city
 app.post("/getcity", (req, res) => {
   const url = process.env.GEONAME_BASE_URL;
   const username = process.env.GEONAME_USERNAME;
@@ -41,6 +46,7 @@ app.post("/getcity", (req, res) => {
     });
 });
 
+// Function to get infos from weather
 app.post("/getweather", (req, res) => {
   const url = process.env.WEATHERBIT_BASE_URL;
   const lat = req.body.lat;
@@ -56,6 +62,7 @@ app.post("/getweather", (req, res) => {
     });
 });
 
+// Function to get images from city
 app.post("/images", (req, res) => {
   const url = process.env.PIXABAY_BASE_URL;
   const city_name = req.body.city;

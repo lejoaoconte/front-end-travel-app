@@ -1,6 +1,7 @@
 import axios from "axios";
 import moment from "moment";
 
+// Function to get data from form
 function handleForm(event) {
   event.preventDefault();
 
@@ -10,6 +11,7 @@ function handleForm(event) {
   setArrayValues(city, date);
 }
 
+// Function to set datas in array (and put on localstorage)
 function setArrayValues(city, date) {
   const value = {
     city,
@@ -25,6 +27,7 @@ function setArrayValues(city, date) {
   getData(city, date);
 }
 
+// Function to get days to trip
 function getDaysTrip(date) {
   const now = moment(new Date());
   const tripDate = moment(date);
@@ -33,6 +36,8 @@ function getDaysTrip(date) {
   return days < 0 ? 0 : days;
 }
 
+
+// Function to get data from backend
 function getData(city, date) {
   console.log(city, date);
   const base_url = "http://localhost:8055";
